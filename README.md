@@ -67,3 +67,17 @@ Plataforma web para organizar e acompanhar a preparação para concursos públic
 ## Licença
 
 Distribuído sob a licença MIT. Veja [`LICENSE`](LICENSE).
+
+## Segurança
+
+O projeto usa o [Gitleaks](https://github.com/gitleaks/gitleaks) (versão fixada em `v8.30.1`, executada pelo Docker) para bloquear commits com segredos. Depois de clonar, ative o hook uma vez:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Para verificar o histórico completo:
+
+```bash
+docker run --rm -v "$(pwd -W):/repo" ghcr.io/gitleaks/gitleaks:v8.30.1 git /repo --redact
+```

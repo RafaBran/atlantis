@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+# Bloqueia o commit se o gitleaks encontrar segredos nas alterações staged.
+# Roda o gitleaks fixado em versão dentro do Docker (nada instalado na máquina).
+
+if ! command -v docker >/dev/null 2>&1; then
+  echo "gitleaks: docker não encontrado no PATH; commit bloqueado."
+  echo "Abra o Docker Desktop ou ajuste o PATH e tente de novo."
+  exit 1
+fi
+
+REPO_DIR="$(pwd -W 2>/dev/null || pwd)"
+
+MSYS_NO_PATHCONV=1 docker run --rm -v "$REPO_DIR:/repo" \
+  ghcr.io/gitleaks/gitleaks:v8.30.1 \
+  git /repo --pre-commit --staged --redact --no-banner --log-level warn
