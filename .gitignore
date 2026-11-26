@@ -1,0 +1,40 @@
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Segredos e configurações locais (nunca versionar)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+application-local.yml
+application-local.properties
+
+# Backend (Java / Spring Boot / Maven / Gradle)
+target/
+build/
+.gradle/
+*.class
+*.log
+hs_err_pid*
+
+# Frontend (Angular / Node)
+node_modules/
+dist/
+.angular/
+.nx/
+coverage/
+npm-debug.log*
+
+# Docker
+docker-compose.override.yml
+
+# Uploads locais de editais e materiais (dados do usuário)
+/storage/
+/uploads/
