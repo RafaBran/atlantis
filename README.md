@@ -9,6 +9,12 @@ Plataforma web para organizar e acompanhar a preparação para concursos públic
 - **Banco de dados:** PostgreSQL 18, com migrações via Flyway
 - **Ambiente local:** Docker Compose para o banco
 
+## Estrutura
+
+- `backend/`: API em Spring Boot
+- `frontend/`: interface em Angular
+- `docker-compose.yml`: serviços locais (PostgreSQL)
+
 ## Pré-requisitos
 
 - Docker Desktop (com backend WSL2 no Windows)

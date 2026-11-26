@@ -38,3 +38,9 @@ docker-compose.override.yml
 # Uploads locais de editais e materiais (dados do usuário)
 /storage/
 /uploads/
+
+# JDK local do projeto (não vai para o repositório)
+.tools/
+
+# Cache do Maven exclusivo do backend (não vai para o repositório)
+backend/.mvn/repository/
